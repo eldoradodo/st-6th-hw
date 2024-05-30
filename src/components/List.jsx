@@ -1,7 +1,7 @@
-import { memo } from "react";
+import { useState, memo, useMemo } from "react";
 
-const List = ({ items }) => {
-  console.log("List component rendered");
+const List = memo(({ items }) => {
+  console.log("List component re-rendered");
   return (
     <ul>
       {items.map((item, index) => (
@@ -9,6 +9,6 @@ const List = ({ items }) => {
       ))}
     </ul>
   );
-};
+});
 
 export default memo(List);
